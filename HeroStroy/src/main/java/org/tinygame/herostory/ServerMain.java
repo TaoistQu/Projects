@@ -12,6 +12,7 @@ import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.tinygame.herostory.cmdHandler.CmdHandlerFactory;
 
 
 /**
@@ -26,6 +27,8 @@ public class ServerMain {
      * @param args
      */
     public static void main(String[] args) {
+        CmdHandlerFactory.init();
+        GameMsgRecognizer.init();
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         ServerBootstrap bootstrap = new ServerBootstrap();

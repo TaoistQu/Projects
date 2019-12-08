@@ -1,4 +1,4 @@
-package org.tinygame.herostory.pojo;
+package org.tinygame.herostory.model;
 
 import lombok.*;
 
