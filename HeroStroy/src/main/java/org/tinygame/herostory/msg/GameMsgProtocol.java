@@ -3,6 +3,9 @@
 
 package org.tinygame.herostory.msg;
 
+/**
+ * @author QuLei
+ */
 public final class GameMsgProtocol {
     private static final com.google.protobuf.Descriptors.Descriptor
             internal_static_msg_UserEntryCmd_descriptor;
@@ -415,6 +418,7 @@ public final class GameMsgProtocol {
             return VALUES[desc.getIndex()];
         }
 
+        @Override
         public final int getNumber() {
             if (this == UNRECOGNIZED) {
                 throw new java.lang.IllegalArgumentException(
@@ -423,6 +427,7 @@ public final class GameMsgProtocol {
             return value;
         }
 
+        @Override
         public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
             return getDescriptor().getValues().get(ordinal());
