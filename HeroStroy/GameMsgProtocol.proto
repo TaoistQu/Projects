@@ -57,6 +57,22 @@ message WhoElseIsHereResult {
         uint32 userId = 1;
         // 英雄形象
         string heroAvatar = 2;
+        // 移动状态
+        MoveState moveState = 3;
+
+        // 移动状态
+        message MoveState {
+            // 起始位置 X
+            float fromPosX = 1;
+            // 起始位置 Y
+            float fromPosY = 2;
+            // 移动到位置 X
+            float toPosX = 3;
+            // 移动到位置 Y
+            float toPosY = 4;
+            // 启程时间戳
+            uint64 startTime = 5;
+        }
     }
 }
 
@@ -69,20 +85,30 @@ message UserMoveToCmd {
     // XXX 注意: 用户移动指令中没有用户 Id,
     // 这是为什么?
     // 
+    // 起始位置 X
+    float moveFromPosX = 1;
+    // 起始位置 Y
+    float moveFromPosY = 2;
     // 移动到位置 X
-    float moveToPosX = 1;
+    float moveToPosX = 3;
     // 移动到位置 Y
-    float moveToPosY = 2;
+    float moveToPosY = 4;
 }
 
 // 结果
 message UserMoveToResult {
     // 移动用户 Id
     uint32 moveUserId = 1;
+    // 起始位置 X
+    float moveFromPosX = 2;
+    // 起始位置 Y
+    float moveFromPosY = 3;
     // 移动到位置 X
-    float moveToPosX = 2;
+    float moveToPosX = 4;
     // 移动到位置 Y
-    float moveToPosY = 3;
+    float moveToPosY = 5;
+    // 启程时间戳
+    uint64 moveStartTime = 6;
 }
 
 // 
