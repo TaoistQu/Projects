@@ -13,6 +13,7 @@ import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.tinygame.herostory.cmdHandler.CmdHandlerFactory;
+import org.tinygame.herostory.login.MySqlSessionFactory;
 
 
 /**
@@ -29,6 +30,7 @@ public class ServerMain {
     public static void main(String[] args) {
         CmdHandlerFactory.init();
         GameMsgRecognizer.init();
+        MySqlSessionFactory.init();
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         ServerBootstrap bootstrap = new ServerBootstrap();

@@ -20,6 +20,10 @@ public class User {
      */
     private int userId;
     /**
+     * 用户名字
+     */
+    private String userName;
+    /**
      * 英雄形象
      */
     private String heroAvatar;
