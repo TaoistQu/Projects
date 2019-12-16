@@ -4,8 +4,8 @@ import com.google.protobuf.GeneratedMessageV3;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.AttributeKey;
-import org.tinygame.herostory.cmdHandler.CmdHandlerFactory;
-import org.tinygame.herostory.cmdHandler.ICmdHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.tinygame.herostory.model.UserManager;
 import org.tinygame.herostory.msg.GameMsgProtocol;
 
@@ -14,21 +14,11 @@ import org.tinygame.herostory.msg.GameMsgProtocol;
  * @author QuLei
  */
 public class GameMsgHandler extends SimpleChannelInboundHandler<Object> {
-
-
     /**
-     * 转型消息对象
-     *
-     * @param msg
-     * @param <TCmd>
-     * @return
+     * 日志对象
      */
-    private static <TCmd extends GeneratedMessageV3> TCmd cast(Object msg) {
-        if (null == msg) {
-            return null;
-        }
-        return (TCmd) msg;
-    }
+    private static final Logger LOGGER = LoggerFactory.getLogger(GameMsgHandler.class);
+
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
@@ -39,10 +29,9 @@ public class GameMsgHandler extends SimpleChannelInboundHandler<Object> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println("收到客户端的消息：msgClass = " + msg.getClass().getName() + ", msg = " + msg);
-        ICmdHandler<? extends GeneratedMessageV3> cmdHandler = CmdHandlerFactory.create(msg.getClass());
-        if (null != cmdHandler) {
-            cmdHandler.handle(ctx, cast(msg));
+        if (msg instanceof GeneratedMessageV3) {
+            //通过主线程处理器处理消息
+            MainThreadProcessor.getInstance().process(ctx, (GeneratedMessageV3) msg);
         }
     }
 
@@ -55,15 +44,22 @@ public class GameMsgHandler extends SimpleChannelInboundHandler<Object> {
     @Override
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
         super.handlerRemoved(ctx);
+        //移除客户端信道
         Broadcaster.removeChannel(ctx.channel());
+        //拿到用户Id
         Integer userId = (Integer) ctx.channel().attr(AttributeKey.valueOf("userId")).get();
         if (null == userId) {
             return;
         }
+        LOGGER.info("用户离线，userId = {}", userId);
+        //移除用户
         UserManager.removeUserById(userId);
+        //广播用户离场的消息
         GameMsgProtocol.UserQuitResult.Builder resultBuilder = GameMsgProtocol.UserQuitResult.newBuilder();
         resultBuilder.setQuitUserId(userId);
         GameMsgProtocol.UserQuitResult newResult = resultBuilder.build();
         Broadcaster.broadMsg(newResult);
     }
+
+
 }
