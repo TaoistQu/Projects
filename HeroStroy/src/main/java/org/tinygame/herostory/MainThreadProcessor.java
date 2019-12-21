@@ -45,20 +45,6 @@ public final class MainThreadProcessor {
         return _instance;
     }
 
-    /**
-     * 转型消息对象
-     *
-     * @param msg
-     * @param <TCmd>
-     * @return
-     */
-    private static <TCmd extends GeneratedMessageV3> TCmd cast(Object msg) {
-        if (null == msg) {
-            return null;
-        }
-        return (TCmd) msg;
-    }
-
     public void process(ChannelHandlerContext ctx, GeneratedMessageV3 msg) {
         if (null == ctx || null == msg) {
             return;
@@ -84,5 +70,31 @@ public final class MainThreadProcessor {
             }
         });
     }
+
+    /**
+     * 转型消息对象
+     *
+     * @param msg
+     * @param <TCmd>
+     * @return
+     */
+    private static <TCmd extends GeneratedMessageV3> TCmd cast(Object msg) {
+        if (null == msg) {
+            return null;
+        }
+        return (TCmd) msg;
+    }
+
+    /**
+     * 处理消息对象
+     *
+     * @param r
+     */
+    public void process(Runnable r) {
+        if (null != r) {
+            _es.submit(r);
+        }
+    }
+
 
 }
