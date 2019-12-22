@@ -31,6 +31,10 @@ public class User {
      * 当前血量
      */
     private int currHp;
+    /**
+     * 已死亡
+     */
+    private boolean died;
 
     public void tract(int subtractHp) {
         currHp = currHp - subtractHp;

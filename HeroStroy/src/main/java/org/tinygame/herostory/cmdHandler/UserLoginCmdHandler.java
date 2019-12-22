@@ -9,6 +9,10 @@ import org.tinygame.herostory.model.User;
 import org.tinygame.herostory.model.UserManager;
 import org.tinygame.herostory.msg.GameMsgProtocol;
 
+import java.util.Iterator;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * 用户登陆指令处理
  *
@@ -19,6 +23,35 @@ public class UserLoginCmdHandler implements ICmdHandler<GameMsgProtocol.UserLogi
      * 日志对象
      */
     private static final Logger LOGGER = LoggerFactory.getLogger(UserLoginCmdHandler.class);
+    /**
+     * 用户登陆状态字典，防止用户连点登陆按钮
+     */
+    static private final Map<String, Long> USER_LOGIN_STATE_MAP = new ConcurrentHashMap<>();
+
+    /**
+     * 清理超时的登陆时间
+     *
+     * @param userLoginTimeMap 用户登陆时间字典
+     */
+    private static void clearTimeoutLoginTime(Map<String, Long> userLoginTimeMap) {
+        if (null == userLoginTimeMap || userLoginTimeMap.isEmpty()) {
+            return;
+        }
+        //获取系统时间
+        final long currTime = System.currentTimeMillis();
+        //获取迭代器
+        Iterator<String> it = userLoginTimeMap.keySet().iterator();
+        while (it.hasNext()) {
+            //根据用户名获取登陆时间
+            String userName = it.next();
+            Long loginTime = userLoginTimeMap.get(userName);
+            if (null == loginTime || currTime - loginTime > 5000) {
+                //如果超时
+                it.remove();
+            }
+
+        }
+    }
 
     @Override
     public void handle(ChannelHandlerContext ctx, GameMsgProtocol.UserLoginCmd cmd) {
@@ -32,8 +65,21 @@ public class UserLoginCmdHandler implements ICmdHandler<GameMsgProtocol.UserLogi
                 userName,
                 password
         );
+        //事先清理超时的登陆时间
+        clearTimeoutLoginTime(USER_LOGIN_STATE_MAP);
 
+        if (USER_LOGIN_STATE_MAP.containsKey(userName)) {
+            //如果正在处理登陆操作
+            return;
+        }
+        //获取系统当前时间
+        final long currTime = System.currentTimeMillis();
+        //设置用户登陆
+        USER_LOGIN_STATE_MAP.putIfAbsent(userName, currTime);
+        //执行用户登陆
         LoginService.getInstance().userLogin(userName, password, (userEntity) -> {
+            //移除用户登陆状态
+            USER_LOGIN_STATE_MAP.remove(userName);
             if (null == userEntity) {
                 LOGGER.error("用户登陆失败, userName = {}", cmd.getUserName());
                 //返回Void类对象

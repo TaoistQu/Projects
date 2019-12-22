@@ -14,6 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.tinygame.herostory.cmdHandler.CmdHandlerFactory;
 import org.tinygame.herostory.login.MySqlSessionFactory;
+import org.tinygame.herostory.mq.MQProducer;
+import org.tinygame.herostory.util.RedisUtil;
 
 
 /**
@@ -31,6 +33,8 @@ public class ServerMain {
         CmdHandlerFactory.init();
         GameMsgRecognizer.init();
         MySqlSessionFactory.init();
+        RedisUtil.init();
+        MQProducer.init();
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         ServerBootstrap bootstrap = new ServerBootstrap();
