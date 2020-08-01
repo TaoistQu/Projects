@@ -1,0 +1,971 @@
+[00:28:53,515] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd <==> org.tinygame.herostory.cmdHandler.UserMoveToCmdHandler
+[00:28:53,525] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd <==> org.tinygame.herostory.cmdHandler.UserAttkCmdHandler
+[00:28:53,528] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdHandler.UserEntryCmdHandler
+[00:28:53,531] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd <==> org.tinygame.herostory.cmdHandler.UserLoginCmdHandler
+[00:28:53,534] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdHandler.WhoElseIsHereCmdHandler
+[00:28:53,616] [INFO] GameMsgRecognizer.init --> SelectHeroResult <==> 16
+[00:28:53,628] [INFO] GameMsgRecognizer.init --> SelectHeroCmd <==> 15
+[00:28:53,633] [INFO] GameMsgRecognizer.init --> UserLoginResult <==> 14
+[00:28:53,638] [INFO] GameMsgRecognizer.init --> UserLoginCmd <==> 13
+[00:28:53,642] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[00:28:53,646] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[00:28:53,650] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[00:28:53,654] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[00:28:53,659] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[00:28:53,663] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[00:28:53,668] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[00:28:53,675] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[00:28:53,680] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[00:28:53,687] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[00:28:53,691] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[00:28:53,698] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[00:28:53,704] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[00:28:56,301] [INFO] ServerMain.main --> 服务器启动成功！！！
+[00:29:35,143] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+[00:29:35,150] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+[00:29:47,930] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+[00:29:47,931] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+[00:30:00,072] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+[00:30:00,073] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+[00:30:26,679] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd
+[00:30:26,680] [INFO] UserLoginCmdHandler.handle --> 用户登陆, userName = a, password = b
+[00:30:26,704] [INFO] LoginService.userLogin --> 当前线程 = MainThreadProcessor
+[00:30:31,345] [ERROR] LoginService.userLogin --> 
+### Error querying database.  Cause: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:93)
+	at com.sun.proxy.$Proxy5.getUserByName(Unknown Source)
+	at org.tinygame.herostory.login.LoginService.userLogin(LoginService.java:55)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:38)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:18)
+	at org.tinygame.herostory.MainThreadProcessor.lambda$process$1(MainThreadProcessor.java:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:906)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:831)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:221)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:216)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:95)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:422)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:138)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:60)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 15 more
+Caused by: com.mysql.cj.exceptions.InvalidConnectionAttributeException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:85)
+	at com.mysql.cj.util.TimeUtil.getCanonicalTimezone(TimeUtil.java:132)
+	at com.mysql.cj.protocol.a.NativeProtocol.configureTimezone(NativeProtocol.java:2121)
+	at com.mysql.cj.protocol.a.NativeProtocol.initServerSession(NativeProtocol.java:2145)
+	at com.mysql.cj.jdbc.ConnectionImpl.initializePropsFromServer(ConnectionImpl.java:1310)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:869)
+	... 36 more
+[00:30:31,356] [ERROR] UserLoginCmdHandler.handle --> 用户登陆失败, userName = a
+[00:33:03,752] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd <==> org.tinygame.herostory.cmdHandler.UserMoveToCmdHandler
+[00:33:03,764] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd <==> org.tinygame.herostory.cmdHandler.UserAttkCmdHandler
+[00:33:03,771] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdHandler.UserEntryCmdHandler
+[00:33:03,776] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd <==> org.tinygame.herostory.cmdHandler.UserLoginCmdHandler
+[00:33:03,779] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdHandler.WhoElseIsHereCmdHandler
+[00:33:03,877] [INFO] GameMsgRecognizer.init --> SelectHeroResult <==> 16
+[00:33:03,895] [INFO] GameMsgRecognizer.init --> SelectHeroCmd <==> 15
+[00:33:03,901] [INFO] GameMsgRecognizer.init --> UserLoginResult <==> 14
+[00:33:03,911] [INFO] GameMsgRecognizer.init --> UserLoginCmd <==> 13
+[00:33:03,917] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[00:33:03,924] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[00:33:03,930] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[00:33:03,936] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[00:33:03,944] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[00:33:03,960] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[00:33:03,966] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[00:33:03,984] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[00:33:03,996] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[00:33:04,015] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[00:33:04,025] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[00:33:04,031] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[00:33:04,044] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[00:33:07,628] [INFO] ServerMain.main --> 服务器启动成功！！！
+[00:33:14,512] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd
+[00:33:14,519] [INFO] UserLoginCmdHandler.handle --> 用户登陆, userName = a, password = b
+[00:33:14,541] [INFO] LoginService.userLogin --> 当前线程 = MainThreadProcessor
+[00:33:14,827] [ERROR] LoginService.userLogin --> 
+### Error querying database.  Cause: java.sql.SQLException: The connection property 'useSSL' acceptable values are: 'TRUE', 'FALSE', 'YES' or 'NO'. The value 'false;useUnicode=true;characterEncoding=UTF-8;zeroDateTimeBehavior=convertToNull;autoReconnect=true;autoReconnectForPools=true' is not acceptable.
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: The connection property 'useSSL' acceptable values are: 'TRUE', 'FALSE', 'YES' or 'NO'. The value 'false;useUnicode=true;characterEncoding=UTF-8;zeroDateTimeBehavior=convertToNull;autoReconnect=true;autoReconnectForPools=true' is not acceptable.
+org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLException: The connection property 'useSSL' acceptable values are: 'TRUE', 'FALSE', 'YES' or 'NO'. The value 'false;useUnicode=true;characterEncoding=UTF-8;zeroDateTimeBehavior=convertToNull;autoReconnect=true;autoReconnectForPools=true' is not acceptable.
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: The connection property 'useSSL' acceptable values are: 'TRUE', 'FALSE', 'YES' or 'NO'. The value 'false;useUnicode=true;characterEncoding=UTF-8;zeroDateTimeBehavior=convertToNull;autoReconnect=true;autoReconnectForPools=true' is not acceptable.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:93)
+	at com.sun.proxy.$Proxy5.getUserByName(Unknown Source)
+	at org.tinygame.herostory.login.LoginService.userLogin(LoginService.java:55)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:38)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:18)
+	at org.tinygame.herostory.MainThreadProcessor.lambda$process$1(MainThreadProcessor.java:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.sql.SQLException: The connection property 'useSSL' acceptable values are: 'TRUE', 'FALSE', 'YES' or 'NO'. The value 'false;useUnicode=true;characterEncoding=UTF-8;zeroDateTimeBehavior=convertToNull;autoReconnect=true;autoReconnectForPools=true' is not acceptable.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:452)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:221)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:216)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:95)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:422)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:138)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:60)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 15 more
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: The connection property 'useSSL' acceptable values are: 'TRUE', 'FALSE', 'YES' or 'NO'. The value 'false;useUnicode=true;characterEncoding=UTF-8;zeroDateTimeBehavior=convertToNull;autoReconnect=true;autoReconnectForPools=true' is not acceptable.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:202)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:398)
+	... 34 more
+Caused by: com.mysql.cj.exceptions.CJException: The connection property 'useSSL' acceptable values are: 'TRUE', 'FALSE', 'YES' or 'NO'. The value 'false;useUnicode=true;characterEncoding=UTF-8;zeroDateTimeBehavior=convertToNull;autoReconnect=true;autoReconnectForPools=true' is not acceptable.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:124)
+	at com.mysql.cj.conf.BooleanPropertyDefinition.booleanFrom(BooleanPropertyDefinition.java:86)
+	at com.mysql.cj.conf.BooleanPropertyDefinition.parseObject(BooleanPropertyDefinition.java:69)
+	at com.mysql.cj.conf.BooleanPropertyDefinition.parseObject(BooleanPropertyDefinition.java:39)
+	at com.mysql.cj.conf.AbstractRuntimeProperty.setValueInternal(AbstractRuntimeProperty.java:184)
+	at com.mysql.cj.conf.AbstractRuntimeProperty.initializeFrom(AbstractRuntimeProperty.java:81)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:199)
+	... 35 more
+Caused by: java.lang.IllegalArgumentException: No enum constant com.mysql.cj.conf.BooleanPropertyDefinition.AllowableValues.FALSE;USEUNICODE=TRUE;CHARACTERENCODING=UTF-8;ZERODATETIMEBEHAVIOR=CONVERTTONULL;AUTORECONNECT=TRUE;AUTORECONNECTFORPOOLS=TRUE
+	at java.lang.Enum.valueOf(Enum.java:238)
+	at com.mysql.cj.conf.BooleanPropertyDefinition$AllowableValues.valueOf(BooleanPropertyDefinition.java:43)
+	at com.mysql.cj.conf.BooleanPropertyDefinition.booleanFrom(BooleanPropertyDefinition.java:84)
+	... 40 more
+[00:33:14,838] [ERROR] UserLoginCmdHandler.handle --> 用户登陆失败, userName = a
+[00:34:15,864] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd <==> org.tinygame.herostory.cmdHandler.UserMoveToCmdHandler
+[00:34:15,880] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd <==> org.tinygame.herostory.cmdHandler.UserAttkCmdHandler
+[00:34:15,887] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdHandler.UserEntryCmdHandler
+[00:34:15,894] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd <==> org.tinygame.herostory.cmdHandler.UserLoginCmdHandler
+[00:34:15,898] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdHandler.WhoElseIsHereCmdHandler
+[00:34:16,032] [INFO] GameMsgRecognizer.init --> SelectHeroResult <==> 16
+[00:34:16,059] [INFO] GameMsgRecognizer.init --> SelectHeroCmd <==> 15
+[00:34:16,071] [INFO] GameMsgRecognizer.init --> UserLoginResult <==> 14
+[00:34:16,081] [INFO] GameMsgRecognizer.init --> UserLoginCmd <==> 13
+[00:34:16,099] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[00:34:16,114] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[00:34:16,128] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[00:34:16,136] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[00:34:16,146] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[00:34:16,160] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[00:34:16,166] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[00:34:16,203] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[00:34:16,214] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[00:34:16,233] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[00:34:16,245] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[00:34:16,254] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[00:34:16,262] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[00:34:21,325] [INFO] ServerMain.main --> 服务器启动成功！！！
+[00:34:24,472] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd
+[00:34:24,490] [INFO] UserLoginCmdHandler.handle --> 用户登陆, userName = a, password = b
+[00:34:24,520] [INFO] LoginService.userLogin --> 当前线程 = MainThreadProcessor
+[00:34:25,150] [ERROR] LoginService.userLogin --> 
+### Error querying database.  Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:93)
+	at com.sun.proxy.$Proxy5.getUserByName(Unknown Source)
+	at org.tinygame.herostory.login.LoginService.userLogin(LoginService.java:55)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:38)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:18)
+	at org.tinygame.herostory.MainThreadProcessor.lambda$process$1(MainThreadProcessor.java:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:76)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:221)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:216)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:95)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:422)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:138)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:60)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 15 more
+Caused by: com.mysql.cj.exceptions.InvalidConnectionAttributeException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:85)
+	at com.mysql.cj.util.TimeUtil.getCanonicalTimezone(TimeUtil.java:132)
+	at com.mysql.cj.protocol.a.NativeProtocol.configureTimezone(NativeProtocol.java:2121)
+	at com.mysql.cj.protocol.a.NativeProtocol.initServerSession(NativeProtocol.java:2145)
+	at com.mysql.cj.jdbc.ConnectionImpl.initializePropsFromServer(ConnectionImpl.java:1310)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:967)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 35 more
+[00:34:25,159] [ERROR] UserLoginCmdHandler.handle --> 用户登陆失败, userName = a
+[00:34:54,758] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd <==> org.tinygame.herostory.cmdHandler.UserMoveToCmdHandler
+[00:34:54,774] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd <==> org.tinygame.herostory.cmdHandler.UserAttkCmdHandler
+[00:34:54,777] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdHandler.UserEntryCmdHandler
+[00:34:54,788] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd <==> org.tinygame.herostory.cmdHandler.UserLoginCmdHandler
+[00:34:54,790] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdHandler.WhoElseIsHereCmdHandler
+[00:34:54,921] [INFO] GameMsgRecognizer.init --> SelectHeroResult <==> 16
+[00:34:54,937] [INFO] GameMsgRecognizer.init --> SelectHeroCmd <==> 15
+[00:34:54,944] [INFO] GameMsgRecognizer.init --> UserLoginResult <==> 14
+[00:34:54,954] [INFO] GameMsgRecognizer.init --> UserLoginCmd <==> 13
+[00:34:54,959] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[00:34:54,963] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[00:34:55,027] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[00:34:55,038] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[00:34:55,045] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[00:34:55,057] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[00:34:55,062] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[00:34:55,084] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[00:34:55,090] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[00:34:55,103] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[00:34:55,108] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[00:34:55,113] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[00:34:55,124] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[00:34:59,624] [INFO] ServerMain.main --> 服务器启动成功！！！
+[00:35:01,205] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd
+[00:35:01,218] [INFO] UserLoginCmdHandler.handle --> 用户登陆, userName = a, password = b
+[00:35:01,251] [INFO] LoginService.userLogin --> 当前线程 = MainThreadProcessor
+[00:35:01,959] [ERROR] LoginService.userLogin --> 
+### Error querying database.  Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:93)
+	at com.sun.proxy.$Proxy5.getUserByName(Unknown Source)
+	at org.tinygame.herostory.login.LoginService.userLogin(LoginService.java:55)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:38)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:18)
+	at org.tinygame.herostory.MainThreadProcessor.lambda$process$1(MainThreadProcessor.java:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:76)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:221)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:216)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:95)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:422)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:138)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:60)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 15 more
+Caused by: com.mysql.cj.exceptions.InvalidConnectionAttributeException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:85)
+	at com.mysql.cj.util.TimeUtil.getCanonicalTimezone(TimeUtil.java:132)
+	at com.mysql.cj.protocol.a.NativeProtocol.configureTimezone(NativeProtocol.java:2121)
+	at com.mysql.cj.protocol.a.NativeProtocol.initServerSession(NativeProtocol.java:2145)
+	at com.mysql.cj.jdbc.ConnectionImpl.initializePropsFromServer(ConnectionImpl.java:1310)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:967)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 35 more
+[00:35:01,971] [ERROR] UserLoginCmdHandler.handle --> 用户登陆失败, userName = a
+[00:40:25,101] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd <==> org.tinygame.herostory.cmdHandler.UserMoveToCmdHandler
+[00:40:25,116] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd <==> org.tinygame.herostory.cmdHandler.UserAttkCmdHandler
+[00:40:25,124] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdHandler.UserEntryCmdHandler
+[00:40:25,129] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd <==> org.tinygame.herostory.cmdHandler.UserLoginCmdHandler
+[00:40:25,133] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdHandler.WhoElseIsHereCmdHandler
+[00:40:25,280] [INFO] GameMsgRecognizer.init --> SelectHeroResult <==> 16
+[00:40:25,300] [INFO] GameMsgRecognizer.init --> SelectHeroCmd <==> 15
+[00:40:25,310] [INFO] GameMsgRecognizer.init --> UserLoginResult <==> 14
+[00:40:25,316] [INFO] GameMsgRecognizer.init --> UserLoginCmd <==> 13
+[00:40:25,329] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[00:40:25,343] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[00:40:25,350] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[00:40:25,362] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[00:40:25,368] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[00:40:25,380] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[00:40:25,386] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[00:40:25,400] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[00:40:25,410] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[00:40:25,423] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[00:40:25,430] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[00:40:25,437] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[00:40:25,449] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[00:40:29,453] [INFO] ServerMain.main --> 服务器启动成功！！！
+[00:40:51,677] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd
+[00:40:51,687] [INFO] UserLoginCmdHandler.handle --> 用户登陆, userName = b, password = b
+[00:40:51,714] [INFO] LoginService.userLogin --> 当前线程 = MainThreadProcessor
+[00:40:52,292] [ERROR] LoginService.userLogin --> 
+### Error querying database.  Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:93)
+	at com.sun.proxy.$Proxy5.getUserByName(Unknown Source)
+	at org.tinygame.herostory.login.LoginService.userLogin(LoginService.java:55)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:38)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:18)
+	at org.tinygame.herostory.MainThreadProcessor.lambda$process$1(MainThreadProcessor.java:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:76)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:221)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:216)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:95)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:422)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:138)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:60)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 15 more
+Caused by: com.mysql.cj.exceptions.InvalidConnectionAttributeException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:85)
+	at com.mysql.cj.util.TimeUtil.getCanonicalTimezone(TimeUtil.java:132)
+	at com.mysql.cj.protocol.a.NativeProtocol.configureTimezone(NativeProtocol.java:2121)
+	at com.mysql.cj.protocol.a.NativeProtocol.initServerSession(NativeProtocol.java:2145)
+	at com.mysql.cj.jdbc.ConnectionImpl.initializePropsFromServer(ConnectionImpl.java:1310)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:967)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 35 more
+[00:40:52,302] [ERROR] UserLoginCmdHandler.handle --> 用户登陆失败, userName = b
+[00:42:36,994] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd <==> org.tinygame.herostory.cmdHandler.UserMoveToCmdHandler
+[00:42:37,010] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd <==> org.tinygame.herostory.cmdHandler.UserAttkCmdHandler
+[00:42:37,019] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdHandler.UserEntryCmdHandler
+[00:42:37,023] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd <==> org.tinygame.herostory.cmdHandler.UserLoginCmdHandler
+[00:42:37,026] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdHandler.WhoElseIsHereCmdHandler
+[00:42:37,157] [INFO] GameMsgRecognizer.init --> SelectHeroResult <==> 16
+[00:42:37,174] [INFO] GameMsgRecognizer.init --> SelectHeroCmd <==> 15
+[00:42:37,183] [INFO] GameMsgRecognizer.init --> UserLoginResult <==> 14
+[00:42:37,190] [INFO] GameMsgRecognizer.init --> UserLoginCmd <==> 13
+[00:42:37,197] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[00:42:37,205] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[00:42:37,239] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[00:42:37,253] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[00:42:37,261] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[00:42:37,283] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[00:42:37,360] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[00:42:37,423] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[00:42:37,438] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[00:42:37,462] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[00:42:37,487] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[00:42:37,502] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[00:42:37,509] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[00:43:18,882] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd <==> org.tinygame.herostory.cmdHandler.UserMoveToCmdHandler
+[00:43:18,999] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd <==> org.tinygame.herostory.cmdHandler.UserAttkCmdHandler
+[00:43:19,085] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd <==> org.tinygame.herostory.cmdHandler.UserLoginCmdHandler
+[00:43:19,171] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdHandler.UserEntryCmdHandler
+[00:43:19,289] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdHandler.WhoElseIsHereCmdHandler
+[00:43:20,591] [INFO] GameMsgRecognizer.init --> SelectHeroResult <==> 16
+[00:43:20,663] [INFO] GameMsgRecognizer.init --> SelectHeroCmd <==> 15
+[00:43:20,725] [INFO] GameMsgRecognizer.init --> UserLoginResult <==> 14
+[00:43:20,802] [INFO] GameMsgRecognizer.init --> UserLoginCmd <==> 13
+[00:43:20,886] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[00:43:20,946] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[00:43:20,968] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[00:43:21,015] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[00:43:21,051] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[00:43:21,086] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[00:43:21,134] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[00:43:21,201] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[00:43:21,250] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[00:43:21,400] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[00:43:21,431] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[00:43:21,477] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[00:43:21,514] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[00:43:32,083] [INFO] ServerMain.main --> 服务器启动成功！！！
+[00:43:37,966] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd
+[00:43:37,985] [INFO] UserLoginCmdHandler.handle --> 用户登陆, userName = b, password = b
+[00:43:38,080] [INFO] LoginService.userLogin --> 当前线程 = MainThreadProcessor
+[00:43:38,820] [ERROR] LoginService.userLogin --> 
+### Error querying database.  Cause: java.sql.SQLException: Unsupported character encoding 'utf8;allowMultiQueries=true;serverTimezone=GMT+8'
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: Unsupported character encoding 'utf8;allowMultiQueries=true;serverTimezone=GMT+8'
+org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLException: Unsupported character encoding 'utf8;allowMultiQueries=true;serverTimezone=GMT+8'
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: Unsupported character encoding 'utf8;allowMultiQueries=true;serverTimezone=GMT+8'
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:93)
+	at com.sun.proxy.$Proxy7.getUserByName(Unknown Source)
+	at org.tinygame.herostory.login.LoginService.userLogin(LoginService.java:55)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:38)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:18)
+	at org.tinygame.herostory.MainThreadProcessor.lambda$process$1(MainThreadProcessor.java:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.sql.SQLException: Unsupported character encoding 'utf8;allowMultiQueries=true;serverTimezone=GMT+8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:452)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:221)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:216)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:95)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:422)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:138)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:60)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 14 more
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'utf8;allowMultiQueries=true;serverTimezone=GMT+8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.__newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45009)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45012)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:64)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:231)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:398)
+	... 33 more
+Caused by: java.io.UnsupportedEncodingException: utf8;allowMultiQueries=true;serverTimezone=GMT+8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:283)
+	... 36 more
+[00:43:38,838] [ERROR] UserLoginCmdHandler.handle --> 用户登陆失败, userName = b
+[00:44:23,552] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd <==> org.tinygame.herostory.cmdHandler.UserAttkCmdHandler
+[00:44:23,609] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdHandler.WhoElseIsHereCmdHandler
+[00:44:23,693] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd <==> org.tinygame.herostory.cmdHandler.UserLoginCmdHandler
+[00:44:23,756] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdHandler.UserEntryCmdHandler
+[00:44:23,794] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd <==> org.tinygame.herostory.cmdHandler.UserMoveToCmdHandler
+[00:44:24,532] [INFO] GameMsgRecognizer.init --> SelectHeroResult <==> 16
+[00:44:24,674] [INFO] GameMsgRecognizer.init --> SelectHeroCmd <==> 15
+[00:44:24,723] [INFO] GameMsgRecognizer.init --> UserLoginResult <==> 14
+[00:44:24,836] [INFO] GameMsgRecognizer.init --> UserLoginCmd <==> 13
+[00:44:24,890] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[00:44:24,967] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[00:44:25,051] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[00:44:25,088] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[00:44:25,140] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[00:44:25,244] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[00:44:25,307] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[00:44:25,401] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[00:44:25,478] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[00:44:25,554] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[00:44:25,632] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[00:44:25,708] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[00:44:25,753] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[00:44:30,866] [INFO] ServerMain.main --> 服务器启动成功！！！
+[00:44:34,493] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd
+[00:44:34,501] [INFO] UserLoginCmdHandler.handle --> 用户登陆, userName = b, password = b
+[00:44:34,570] [INFO] LoginService.userLogin --> 当前线程 = MainThreadProcessor
+[00:44:35,033] [ERROR] LoginService.userLogin --> 
+### Error querying database.  Cause: java.sql.SQLException: Unsupported character encoding 'utf-8;allowMultiQueries=true;serverTimezone=GMT+8'
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: Unsupported character encoding 'utf-8;allowMultiQueries=true;serverTimezone=GMT+8'
+org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLException: Unsupported character encoding 'utf-8;allowMultiQueries=true;serverTimezone=GMT+8'
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: Unsupported character encoding 'utf-8;allowMultiQueries=true;serverTimezone=GMT+8'
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:93)
+	at com.sun.proxy.$Proxy7.getUserByName(Unknown Source)
+	at org.tinygame.herostory.login.LoginService.userLogin(LoginService.java:55)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:38)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:18)
+	at org.tinygame.herostory.MainThreadProcessor.lambda$process$1(MainThreadProcessor.java:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.sql.SQLException: Unsupported character encoding 'utf-8;allowMultiQueries=true;serverTimezone=GMT+8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:452)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:221)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:216)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:95)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:422)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:138)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:60)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 14 more
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'utf-8;allowMultiQueries=true;serverTimezone=GMT+8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.__newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45009)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45012)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:64)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:231)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:398)
+	... 33 more
+Caused by: java.io.UnsupportedEncodingException: utf-8;allowMultiQueries=true;serverTimezone=GMT+8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:283)
+	... 36 more
+[00:44:35,046] [ERROR] UserLoginCmdHandler.handle --> 用户登陆失败, userName = b
+[00:46:08,444] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdHandler.UserEntryCmdHandler
+[00:46:08,507] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd <==> org.tinygame.herostory.cmdHandler.UserAttkCmdHandler
+[00:46:08,579] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd <==> org.tinygame.herostory.cmdHandler.UserMoveToCmdHandler
+[00:46:08,653] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd <==> org.tinygame.herostory.cmdHandler.UserLoginCmdHandler
+[00:46:08,689] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdHandler.WhoElseIsHereCmdHandler
+[00:46:09,742] [INFO] GameMsgRecognizer.init --> SelectHeroResult <==> 16
+[00:46:09,777] [INFO] GameMsgRecognizer.init --> SelectHeroCmd <==> 15
+[00:46:09,821] [INFO] GameMsgRecognizer.init --> UserLoginResult <==> 14
+[00:46:09,853] [INFO] GameMsgRecognizer.init --> UserLoginCmd <==> 13
+[00:46:09,925] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[00:46:09,970] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[00:46:10,038] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[00:46:10,061] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[00:46:10,091] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[00:46:10,125] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[00:46:10,259] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[00:46:10,340] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[00:46:10,407] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[00:46:10,483] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[00:46:10,511] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[00:46:10,583] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[00:46:10,613] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[00:46:16,167] [INFO] ServerMain.main --> 服务器启动成功！！！
+[00:46:19,069] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd
+[00:46:19,080] [INFO] UserLoginCmdHandler.handle --> 用户登陆, userName = b, password = b
+[00:46:19,143] [INFO] LoginService.userLogin --> 当前线程 = MainThreadProcessor
+[00:46:21,430] [ERROR] LoginService.userLogin --> 
+### Error querying database.  Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+### The error may exist in org/tinygame/herostory/login/db/IUserDao.xml
+### The error may involve org.tinygame.herostory.login.db.IUserDao.getUserByName
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:93)
+	at com.sun.proxy.$Proxy7.getUserByName(Unknown Source)
+	at org.tinygame.herostory.login.LoginService.userLogin(LoginService.java:55)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:38)
+	at org.tinygame.herostory.cmdHandler.UserLoginCmdHandler.handle(UserLoginCmdHandler.java:18)
+	at org.tinygame.herostory.MainThreadProcessor.lambda$process$1(MainThreadProcessor.java:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:76)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:221)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:216)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:95)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:422)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:138)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:60)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 14 more
+Caused by: com.mysql.cj.exceptions.InvalidConnectionAttributeException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.__newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45009)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45012)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:85)
+	at com.mysql.cj.util.TimeUtil.getCanonicalTimezone(TimeUtil.java:132)
+	at com.mysql.cj.protocol.a.NativeProtocol.configureTimezone(NativeProtocol.java:2121)
+	at com.mysql.cj.protocol.a.NativeProtocol.initServerSession(NativeProtocol.java:2145)
+	at com.mysql.cj.jdbc.ConnectionImpl.initializePropsFromServer(ConnectionImpl.java:1310)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:967)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 34 more
+[00:46:21,446] [ERROR] UserLoginCmdHandler.handle --> 用户登陆失败, userName = b
+[00:47:52,844] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd <==> org.tinygame.herostory.cmdHandler.UserAttkCmdHandler
+[00:47:52,909] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdHandler.UserEntryCmdHandler
+[00:47:53,008] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd <==> org.tinygame.herostory.cmdHandler.UserLoginCmdHandler
+[00:47:53,063] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd <==> org.tinygame.herostory.cmdHandler.UserMoveToCmdHandler
+[00:47:53,138] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdHandler.WhoElseIsHereCmdHandler
+[00:47:54,014] [INFO] GameMsgRecognizer.init --> SelectHeroResult <==> 16
+[00:47:54,112] [INFO] GameMsgRecognizer.init --> SelectHeroCmd <==> 15
+[00:47:54,262] [INFO] GameMsgRecognizer.init --> UserLoginResult <==> 14
+[00:47:54,354] [INFO] GameMsgRecognizer.init --> UserLoginCmd <==> 13
+[00:47:54,462] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[00:47:54,537] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[00:47:54,657] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[00:47:54,776] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[00:47:54,809] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[00:47:54,869] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[00:47:54,911] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[00:47:55,123] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[00:47:55,155] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[00:47:55,225] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[00:47:55,259] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[00:47:55,304] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[00:47:55,355] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[00:48:01,111] [INFO] ServerMain.main --> 服务器启动成功！！！
+[00:48:05,740] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd
+[00:48:05,749] [INFO] UserLoginCmdHandler.handle --> 用户登陆, userName = b, password = b
+[00:48:05,810] [INFO] LoginService.userLogin --> 当前线程 = MainThreadProcessor
+[00:48:07,463] [INFO] UserLoginCmdHandler.handle --> 用户登陆成功, userId = 1, userName = b
+[00:48:08,857] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+[00:48:08,859] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+[00:48:38,032] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd
+[00:48:38,033] [INFO] UserLoginCmdHandler.handle --> 用户登陆, userName = a, password = a
+[00:48:38,035] [INFO] LoginService.userLogin --> 当前线程 = MainThreadProcessor
+[00:48:38,045] [INFO] UserLoginCmdHandler.handle --> 用户登陆成功, userId = 2, userName = a
+[00:48:38,194] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+[00:48:38,195] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+[00:48:43,694] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:48:43,701] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:48:45,643] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:48:47,663] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:48:48,921] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:48:49,986] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:48:54,476] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:48:56,281] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:48:56,286] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:48:57,258] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:48:57,262] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:48:58,115] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:48:58,117] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:48:59,291] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:48:59,295] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:49:00,225] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:49:00,228] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:49:00,667] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:49:00,673] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:49:00,861] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:49:00,864] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:49:01,030] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:49:01,037] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:49:01,217] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:49:01,223] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:49:01,389] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:49:01,393] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:49:01,596] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:49:01,599] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:49:14,860] [INFO] GameMsgHandler.handlerRemoved --> 用户离线，userId = 1
+[00:49:21,776] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd
+[00:49:21,777] [INFO] UserLoginCmdHandler.handle --> 用户登陆, userName = a, password = a
+[00:49:21,779] [INFO] LoginService.userLogin --> 当前线程 = MainThreadProcessor
+[00:49:21,795] [INFO] UserLoginCmdHandler.handle --> 用户登陆成功, userId = 2, userName = a
+[00:49:22,030] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+[00:49:22,031] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+[00:49:25,627] [INFO] GameMsgHandler.handlerRemoved --> 用户离线，userId = 2
+[00:49:37,229] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd
+[00:49:37,230] [INFO] UserLoginCmdHandler.handle --> 用户登陆, userName = b, password = b
+[00:49:37,231] [INFO] LoginService.userLogin --> 当前线程 = MainThreadProcessor
+[00:49:37,235] [INFO] UserLoginCmdHandler.handle --> 用户登陆成功, userId = 1, userName = b
+[00:49:37,455] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+[00:49:37,461] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+[00:49:39,911] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:49:39,914] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:49:42,241] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:49:42,242] [ERROR] UserMoveToCmdHandler.handle --> 未找到玩家，userId=2
+[00:49:42,924] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:49:42,925] [ERROR] UserMoveToCmdHandler.handle --> 未找到玩家，userId=2
+[00:49:43,185] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:49:43,187] [ERROR] UserMoveToCmdHandler.handle --> 未找到玩家，userId=2
+[00:49:43,357] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:49:43,357] [ERROR] UserMoveToCmdHandler.handle --> 未找到玩家，userId=2
+[00:49:43,972] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:49:43,972] [ERROR] UserMoveToCmdHandler.handle --> 未找到玩家，userId=2
+[00:49:44,834] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:49:45,119] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:49:46,754] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:49:47,668] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:49:47,868] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:49:49,117] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:49:49,316] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:50:00,840] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:50:01,391] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:50:02,966] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:50:21,105] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserLoginCmd
+[00:50:21,106] [INFO] UserLoginCmdHandler.handle --> 用户登陆, userName = c, password = c
+[00:50:21,107] [INFO] LoginService.userLogin --> 当前线程 = MainThreadProcessor
+[00:50:21,122] [INFO] UserLoginCmdHandler.handle --> 用户登陆成功, userId = 3, userName = c
+[00:50:21,352] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd
+[00:50:21,353] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd
+[00:50:24,517] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:50:28,857] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd
+[00:50:30,076] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:50:30,080] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:50:30,955] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:50:30,959] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:50:31,596] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:50:31,599] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:50:32,160] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:50:32,162] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:50:32,615] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:50:32,620] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:50:33,068] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:50:33,072] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:50:33,470] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:50:33,473] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:50:33,974] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:50:33,977] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:50:34,559] [INFO] MainThreadProcessor.process --> 收到客户端的消息,msgClazz = org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd
+[00:50:34,561] [INFO] UserAttkCmdHandler.handle --> 当前线程 = MainThreadProcessor
+[00:50:39,770] [INFO] GameMsgHandler.handlerRemoved --> 用户离线，userId = 2
+[00:50:39,804] [INFO] GameMsgHandler.handlerRemoved --> 用户离线，userId = 3
+[00:50:45,931] [INFO] GameMsgHandler.handlerRemoved --> 用户离线，userId = 1

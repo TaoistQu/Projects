@@ -1,0 +1,37 @@
+[00:43:00,234] [INFO] ServerMain.main --> 服务器启动成功！！！
+[01:21:17,339] [INFO] ServerMain.main --> 服务器启动成功！！！
+[01:21:52,933] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 0
+[01:21:52,939] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 2
+[01:22:07,094] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 0
+[01:22:07,097] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 2
+[01:22:12,219] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 0
+[01:22:12,220] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 2
+[01:22:13,445] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 4
+[01:22:14,054] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 4
+[01:22:16,354] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 4
+[01:22:16,902] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 4
+[01:22:20,186] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 0
+[01:22:20,188] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 2
+[01:22:21,226] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 4
+[01:22:23,524] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 4
+[01:22:24,615] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 4
+[01:22:24,842] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 4
+[01:22:25,444] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 9
+[01:22:47,576] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 0
+[01:22:47,577] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 2
+[01:22:48,507] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 4
+[01:22:50,526] [ERROR] GameMsgDecoder.channelRead --> 无法识别的消息, msgCode = 4
+[01:25:25,376] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[01:25:25,457] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[01:25:25,508] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[01:25:25,567] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[01:25:25,629] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[01:25:25,675] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[01:25:25,711] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[01:25:25,737] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[01:25:25,774] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[01:25:25,810] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[01:25:25,828] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[01:25:25,851] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[01:25:25,874] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[01:25:29,495] [INFO] ServerMain.main --> 服务器启动成功！！！

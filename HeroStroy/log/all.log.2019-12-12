@@ -1,0 +1,60 @@
+[00:12:46,399] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[00:12:46,427] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[00:12:46,444] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[00:12:46,458] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[00:12:46,472] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[00:12:46,484] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[00:12:46,513] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[00:12:46,528] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[00:12:46,545] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[00:12:46,582] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[00:12:46,616] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[00:12:46,635] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[00:12:46,670] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[00:12:48,177] [INFO] ServerMain.main --> 服务器启动成功！！！
+[00:13:50,993] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[00:13:51,034] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[00:13:51,051] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[00:13:51,074] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[00:13:51,091] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[00:13:51,129] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[00:13:51,147] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[00:13:51,177] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[00:13:51,226] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[00:13:51,294] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[00:13:51,326] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[00:13:51,348] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[00:13:51,367] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[00:13:53,514] [INFO] ServerMain.main --> 服务器启动成功！！！
+[00:21:30,921] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[00:21:30,938] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[00:21:30,962] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[00:21:30,978] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[00:21:30,993] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[00:21:31,008] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[00:21:31,024] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[00:21:31,041] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[00:21:31,053] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[00:21:31,079] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[00:21:31,092] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[00:21:31,105] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[00:21:31,119] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[00:21:32,795] [INFO] ServerMain.main --> 服务器启动成功！！！
+[00:24:37,270] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserMoveToCmd <==> org.tinygame.herostory.cmdHandler.UserMoveToCmdHandler
+[00:24:37,302] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserAttkCmd <==> org.tinygame.herostory.cmdHandler.UserAttkCmdHandler
+[00:24:37,321] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$WhoElseIsHereCmd <==> org.tinygame.herostory.cmdHandler.WhoElseIsHereCmdHandler
+[00:24:37,337] [INFO] CmdHandlerFactory.init --> 关联 org.tinygame.herostory.msg.GameMsgProtocol$UserEntryCmd <==> org.tinygame.herostory.cmdHandler.UserEntryCmdHandler
+[00:24:38,009] [INFO] GameMsgRecognizer.init --> UserDieResult <==> 12
+[00:24:38,023] [INFO] GameMsgRecognizer.init --> UserSubtractHpResult <==> 11
+[00:24:38,044] [INFO] GameMsgRecognizer.init --> UserAttkResult <==> 10
+[00:24:38,057] [INFO] GameMsgRecognizer.init --> UserAttkCmd <==> 9
+[00:24:38,070] [INFO] GameMsgRecognizer.init --> UserStopResult <==> 8
+[00:24:38,094] [INFO] GameMsgRecognizer.init --> UserStopCmd <==> 7
+[00:24:38,107] [INFO] GameMsgRecognizer.init --> UserQuitResult <==> 6
+[00:24:38,131] [INFO] GameMsgRecognizer.init --> UserMoveToResult <==> 5
+[00:24:38,154] [INFO] GameMsgRecognizer.init --> UserMoveToCmd <==> 4
+[00:24:38,179] [INFO] GameMsgRecognizer.init --> WhoElseIsHereResult <==> 3
+[00:24:38,195] [INFO] GameMsgRecognizer.init --> WhoElseIsHereCmd <==> 2
+[00:24:38,212] [INFO] GameMsgRecognizer.init --> UserEntryResult <==> 1
+[00:24:38,237] [INFO] GameMsgRecognizer.init --> UserEntryCmd <==> 0
+[00:24:39,703] [INFO] ServerMain.main --> 服务器启动成功！！！

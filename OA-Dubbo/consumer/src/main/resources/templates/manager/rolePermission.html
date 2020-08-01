@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>办公无纸化系统</title>
+    <!-- 最新的 Bootstrap 核心 css 文件 -->
+    <!-- 在url上 使用 @标签 可以帮我们 自动加上 contextpath -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script th:src="@{/js/common/jquery-3.4.1.min.js}" ></script>
+    <script th:src="@{/js/bootstrap.min.js}" ></script>
+</head>
+<body>
+    <!--导航栏         开始   ↓-->
+<nav class="navbar navbar-default">
+
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index">首页</a>
+        </div>
+
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ><a href="#">公文流转 <span class="sr-only">(current)</span></a></li>
+
+                <li  class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">人力资源 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ><a href="/account/list">员工列表</a></li>
+                    </ul>
+                </li>
+
+                <li  class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        系统设置 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/manager/accountList">账号列表</a></li>
+                        <li ><a href="/manager/roleList">角色管理</a></li>
+                        <li ><a href="/manager/permissionList">权限管理</a></li>
+                    </ul>
+                </li>
+
+
+            </ul>
+
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入员工姓名或工号">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+
+
+
+                <!--已登录用户    ↓-->
+
+            <ul th:if="${session.account} != null" class="nav navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        欢迎你 : [[${session.account.loginName}]]
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/account/profile">我的个人信息</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/account/logOut">退出登录</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!--导航结束         ↑-->
+    <!--    表格开始       ↓-->
+
+    <h1>角色授权</h1>
+    <form id="p">
+        角色ID:<input name="id" type="text" th:value="${role.id}" readonly><br>
+    角色名称：<input name="name" type="text" th:value="${role.name}" readonly><br/>
+       权限：
+
+            <label class="checkbox-inline" th:each="p : ${perList}">
+                <input type="checkbox" name="permissions" th:value="${p.id}">
+                [[${p.name}]]
+            </label>
+        <br/><a  class="btn btn-primary" href="javascript:smt();">提交</a>
+    </form>
+
+
+<!--巨幕结束      ↑-->
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+    function smt(upd){
+        var formObject = {};
+        var data = $("#p").serializeArray();
+        $.each(data,function (i,item) {
+            formObject[item.name] = item.value;
+        });
+
+        var url = "/api/v1/manager/role/permission/add";
+
+        //json对象  formObject
+        $.post(url,data,function(result){
+
+            window.location.href="/manager/roleList";
+        });
+
+    }
+</script>
